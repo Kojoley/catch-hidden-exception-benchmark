@@ -49,9 +49,9 @@ install:
  - cmake .. -DCMAKE_BUILD_TYPE=RELEASE -DBENCHMARK_ENABLE_TESTING=NO -DBENCHMARK_ENABLE_INSTALL=YES
  - cpack -G DEB -D CPACK_PACKAGE_CONTACT=NK -C Release -R 1.4.1
  - make -j3
- - sudo dpkg -i google-benchmark-1.0.0-Linux.deb 
+ - sudo dpkg -i *.deb 
  - popd
 
 script:
  - for v in {4.4,4.6,4.7,4.8,4.9,5,6,7}; do g++-$v --version; CXX=g++-$v ./run.sh; done
- - for v in {3.5,3.6,3.7,3.8,3.9,4.0,5.0,6.0,7}; do clang++-$v --version; CXX=clang++-$v ./run.sh; done
+ - for v in {3.5,3.6,3.7,3.8,4.0,5.0,6.0,7}; do clang++-$v --version; CXX=clang++-$v ./run.sh; done
