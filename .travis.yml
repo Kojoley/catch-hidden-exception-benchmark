@@ -1,0 +1,48 @@
+language: cpp
+sudo: required
+os: linux
+dist: trusty
+apt:
+  sources:
+    - ubuntu-toolchain-r-test
+    - llvm-toolchain-trusty-3.5
+    - llvm-toolchain-trusty-3.6
+    - llvm-toolchain-trusty-3.7
+    - llvm-toolchain-trusty-3.8
+    - llvm-toolchain-trusty-3.9
+    - llvm-toolchain-trusty-4.0
+    - llvm-toolchain-trusty-5.0
+    - llvm-toolchain-trusty-6.0
+    - llvm-toolchain-trusty-7
+  packages:
+    - g++-4.4
+    - g++-4.5
+    - g++-4.6
+    - g++-4.7
+    - g++-4.8
+    - g++-4.9
+    - g++-5
+    - g++-6
+    - g++-7
+    - g++-8
+    - clang++-3.5
+    - clang++-3.6
+    - clang++-3.7
+    - clang++-3.8
+    - clang++-3.9
+    - clang++-4.0
+    - clang++-5.0
+    - clang++-6.0
+    - clang++-7
+
+script:
+ - git clone --depth=1 --no-tags -b v1.4.1 https://github.com/google/benchmark.git
+ - pushd benchmark
+ - mkdir build
+ - cd build
+ - cmake .. -DCMAKE_BUILD_TYPE=RELEASE -DBENCHMARK_ENABLE_TESTING=NO -DBENCHMARK_ENABLE_INSTALL=YES
+ - cpack -G DEB -D CPACK_PACKAGE_CONTACT=NK -C Release -R 1.4.1
+ - make -j3
+ - sudo dpkg -i google-benchmark-1.0.0-Linux.deb 
+ - popd
+ - CXX=clang++-7 ./run.sh
