@@ -1,0 +1,8 @@
+
+set(CPACK_PACKAGE_NAME                "google-benchmark")
+set(CPACK_PACKAGE_VENDOR              "Google")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Benchmark - A library to support the benchmarking of functions, sim$
+set(CPACK_PACKAGE_VERSION             "${GENERIC_LIB_VERSION}")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY   "Google Benchmark")
+
+include(CPack)
