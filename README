@@ -1,0 +1,26 @@
+GCC 6.3
+----------------------------------------------------
+Benchmark             Time           CPU Iterations
+----------------------------------------------------
+hidden             2301 ns       2299 ns     305246
+visible            2263 ns       2263 ns     309187
+hidden_base        2286 ns       2284 ns     301546
+visible_base       2293 ns       2293 ns     302324
+
+Clang 3.8
+----------------------------------------------------
+Benchmark             Time           CPU Iterations
+----------------------------------------------------
+hidden             2437 ns       2437 ns     284839
+visible            2506 ns       2505 ns     276001
+hidden_base        2449 ns       2448 ns     288550
+visible_base       2431 ns       2430 ns     284469
+
+Clang 7
+----------------------------------------------------
+Benchmark             Time           CPU Iterations
+----------------------------------------------------
+hidden             2422 ns       2422 ns     289890
+visible            2393 ns       2393 ns     295283
+hidden_base        2425 ns       2425 ns     296866
+visible_base       2390 ns       2390 ns     294539
