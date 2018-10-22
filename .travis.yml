@@ -17,7 +17,6 @@ addons:
       - llvm-toolchain-trusty-7
     packages:
       - g++-4.4
-      - g++-4.5
       - g++-4.6
       - g++-4.7
       - g++-4.8
@@ -49,5 +48,5 @@ install:
  - popd
 
 script:
- - for v in {4.4,4.5,4.6,4.7,4.8,4.9,5,6,7}; do g++-$v --version; CXX=g++-$v ./run.sh; done
+ - for v in {4.4,4.6,4.7,4.8,4.9,5,6,7}; do g++-$v --version; CXX=g++-$v ./run.sh; done
  - for v in {3.5,3.6,3.7,3.8,3.9,4.0,5.0,6.0,7}; do clang++-$v --version; CXX=clang++-$v ./run.sh; done
